@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Оазис — ванпейджер</title>
+<style>
+  :root{--ink:#3b2a1a;--ink2:#6b5238;--sand:#f6ecd6;--line:#e0c99a;--leaf:#4f9550;--water:#3aa3b5}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",system-ui,Roboto,Arial,sans-serif;color:var(--ink);background:#efe2c4;line-height:1.45}
+  .page{max-width:1000px;margin:24px auto;background:#fffaf0;border-radius:18px;padding:34px 42px;box-shadow:0 10px 30px rgba(80,50,20,.15)}
+  header{display:flex;gap:24px;align-items:center;border-bottom:2px solid var(--line);padding-bottom:18px}
+  header svg{width:96px;height:96px;flex:none}
+  h1{font-family:Georgia,serif;font-size:46px;margin:0}
+  .logline{font-size:19px;color:var(--ink2);margin:4px 0 0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .meta span{background:var(--sand);border:1px solid var(--line);border-radius:20px;padding:3px 12px;font-size:13px}
+  h2{font-family:Georgia,serif;font-size:21px;margin:22px 0 6px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 34px}
+  ul{margin:4px 0;padding-left:20px} li{margin:3px 0}
+  .loop{display:flex;gap:8px;align-items:stretch;margin:8px 0;flex-wrap:wrap}
+  .step{flex:1 1 150px;background:var(--sand);border-radius:12px;padding:10px 12px;font-size:14px;border:1px solid var(--line)}
+  .step b{display:block;color:var(--leaf)}
+  table{border-collapse:collapse;width:100%;font-size:14px}
+  td,th{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+  th{background:var(--sand)}
+  .note{font-size:13px;color:var(--ink2)}
+  a{color:#7a4f2a}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}.page{padding:22px}}
+  @media print{body{background:#fff}.page{box-shadow:none;margin:0;max-width:none}}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#e8d3a6"/><circle cx="50" cy="50" r="22" fill="#3aa3b5"/><g fill="#56a84a"><path d="M50 50 Q70 30 88 40 Q70 46 50 50"/><path d="M50 50 Q30 30 12 40 Q30 46 50 50"/><path d="M50 50 Q66 68 70 88 Q58 70 50 50"/><path d="M50 50 Q34 68 30 88 Q42 70 50 50"/><path d="M50 50 Q52 26 50 8 Q46 28 50 50"/></g><circle cx="50" cy="50" r="5" fill="#7a5533"/></svg>
+  <div>
+    <h1>Оазис</h1>
+    <p class="logline">Уютный roguelite о том, как оживить пустыню: тяните воду каналами, сажайте сад из карт и успейте до бури.</p>
+    <div class="meta"><span>Roguelite · колода + выкладка клеток</span><span>ПК / Steam, браузерная демо-версия</span><span>Партия 30–45 мин</span><span>1 игрок</span></div>
+  </div>
+</header>
+
+<h2>Идея</h2>
+<p>Игрок — хранитель караванного пути. Пустыня наступает, оазисы пересыхают. Каждый оазис — маленькое поле 7×7 с родником в центре и ограниченным числом дней. Из карт в руке нужно собрать живую систему: источники → каналы → растения, которые растут только при поливе. Сад растёт ночью, а прогноз обещает жару и бури, которые засыпают края поля песком.</p>
+
+<h2>Что делает игрок</h2>
+<div class="loop">
+  <div class="step"><b>1. День</b>3 силы и 5 карт: колодец, канал, злаки, пальма, стена, компост…</div>
+  <div class="step"><b>2. Выкладка</b>Ставит клетки на поле. Капля на растении сразу показывает, хватит ли воды в сети.</div>
+  <div class="step"><b>3. Ночь</b>Политые растения растут и приносят «жизнь», неполитые сохнут. Буря засыпает незащищённые края.</div>
+  <div class="step"><b>4. Награда</b>Оживил оазис — берёт новую карту, иногда реликвию, и идёт дальше по карте похода.</div>
+</div>
+
+<div class="grid">
+<div>
+<h2>Чем выделяется</h2>
+<ul>
+  <li><b>Вода как логистика.</b> Решение — не «какую карту сыграть», а «как провести сеть»: у каждого источника свой запас, сети делятся между растениями.</li>
+  <li><b>Время работает против игрока.</b> Растения медленные, а прогноз виден на 2–3 дня вперёд: сажать злаки сейчас или пальму, которая потом защитит от бури?</li>
+  <li><b>Пространство + колода.</b> Сочетание Dorfromantik/Islanders (выкладка, спокойный ритм) и Slay the Spire (колода, реликвии, ветвление похода).</li>
+  <li><b>Мирная тема без насилия:</b> подходит широкой аудитории и стримам «на расслабоне».</li>
+</ul>
+</div>
+<div>
+<h2>Почему интересно играть</h2>
+<ul>
+  <li>Каждая ночь — маленький «сюрприз»: пустой песок превращается в сад, цифры жизни вылетают с клеток.</li>
+  <li>Понятное правило — неочевидная стратегия: тень, ветроломы, сети с разным запасом воды, бахча, которая отдаёт урожай разом.</li>
+  <li>Короткие оазисы по 2–3 минуты: «ещё один и спать».</li>
+  <li>Каждый поход другой: случайные скалы, солончаки, прогноз, награды и реликвии; капли памяти открывают новые карты.</li>
+</ul>
+</div>
+</div>
+
+<h2>Что есть в прототипе</h2>
+<ul>
+  <li>3 региона × 5 оазисов (боссы «Большая буря», «Зной», «Последний колодец»): одна полная партия занимает 30–45 минут.</li>
+  <li>17 карт, 13 типов клеток, 10 реликвий, мета-прогресс (открываются гранат, насос, фонтан, ливень, караван). Сохранение партии в браузере.</li>
+  <li>Обучение подсказками в первом оазисе, раздел «Как играть», управление мышью и клавишами (1–6, Enter, Esc).</li>
+  <li>Баланс проверен ботом: жадный автоигрок проходит регион 1 почти всегда, весь поход — примерно в 1 из 5 попыток.</li>
+</ul>
+
+<h2>Коммерческий потенциал (Steam)</h2>
+<p>Ниша «уютная стратегия + roguelite» стабильно популярна: на слуху Dorfromantik, Islanders, Loop Hero, Against the Storm. «Оазис» берёт короткие сессии и понятную тему у первых и глубину реиграбельности у вторых. Модель — премиум-покупка (ориентир — нижний ценовой сегмент инди-рогаликов) + бесплатная демо-версия к Steam Next Fest для сбора вишлистов. Визуал из простых форм дешёво масштабируется и хорошо читается на скриншотах и в стримах.</p>
+
+<h2>План полной игры — 6 месяцев</h2>
+<table>
+  <tr><th>Месяц</th><th>Результат</th></tr>
+  <tr><td>1</td><td>Перенос на движок (Godot), стиль арта, 5–7 ключевых экранов. Плейтест прототипа на 20–30 людях, метрики: время партии, где проигрывают.</td></tr>
+  <tr><td>2</td><td>Ядро: 40+ карт, 25 реликвий, события между оазисами (караван, торговец, руины), развилки на карте похода.</td></tr>
+  <tr><td>3</td><td>4-й и 5-й регионы с уникальными механиками (оазис на реке, ночные заморозки), боссы. Страница в Steam, трейлер.</td></tr>
+  <tr><td>4</td><td>Мета-прогресс: стартовые «хранители» с разной колодой, уровни сложности, ежедневное испытание. Демо для Next Fest.</td></tr>
+  <tr><td>5</td><td>Полировка: анимации, звуки природы и интерфейса, локализация (EN, RU, ZH, ES, DE), достижения Steam.</td></tr>
+  <tr><td>6</td><td>Бета, баланс по данным плейтестов, исправление ошибок, релиз.</td></tr>
+</table>
+
+<h2>Технологии и AI-инструменты</h2>
+<p>Прототип: HTML + CSS + JavaScript без движка и сборки, арт — векторная графика, нарисованная кодом (SVG). Открывается по ссылке в любом браузере.<br>
+AI: <b>Claude Code</b> — проектирование механик, код, отрисовка SVG-арта и бот-автоигрок для проверки баланса; итерации по скриншотам в браузере. Все решения по геймдизайну, балансу и подаче — мои.</p>
+<p class="note">Автор: Егор Ревацкий · Telegram @gagauz_digital · <a href="index.html">Играть в прототип</a></p>
+</div>
+</body>
+</html>
